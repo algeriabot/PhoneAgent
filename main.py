@@ -19,15 +19,20 @@ AUTH_HEADER = {
 
 call_accept = {
     "type": "realtime",
-    "instructions": "You are a voice agent for a user named Gabe.",
+    "instructions": "You are a voice agent for a user named Gabe. You are casual, friendly, and helpful. Answer briefly.",
     "model": "gpt-realtime-mini",
+    "tools": [
+        { type: "web_search" }
+    ]
 }
 
 response_create = {
     "type": "response.create",
     "response": {
         "instructions": (
-            "Wait 10 seconds and then say to the user 'Hello, Gabe. I'm your AI assistant. How can I help you today?'"
+            #"Wait 10 seconds and then say to the user 'Hello, Gabe. I'm your AI assistant. How can I help you today?'"
+            #"Wait for the user to ask who you are. Then, introduce yourself and ask how you can help."
+            "Greet the user and ask how you can help."
         )
     },
 }
